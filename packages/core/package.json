@@ -2,20 +2,14 @@
   "name": "@repo/core",
   "version": "1.0.0",
   "private": true,
-  "description": "Shared libraries and configurations for the monorepo, including utility functions, reusable components, and Jest setup.",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "eslint . --max-warnings 0",
-    "test": "jest"
+    "lint": "eslint . --max-warnings 0"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
+    "./*": "./src/*.ts"
   },
   "devDependencies": {
     "eslint": "^9.34.0",
